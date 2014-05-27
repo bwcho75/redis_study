@@ -41,7 +41,11 @@ public class JedisExample {
 		
 	}
 	public void Hashes(Jedis jedis){
+		jedis.hset("hmap", "name", "Terry");
+		jedis.hset("hmap", "address", "Seoul");
 		
+		log.info("Hash :"+jedis.hget("hmap", "name"));
+		log.info("Hash :"+jedis.hget("hmap", "address"));
 	}
 	
 	public void pipeLineInsert(Jedis jedis){
